@@ -1,55 +1,40 @@
-# WorkAdventure Map Starter Kit
+# Programmez votre escape game!
 
+// TODO: screenshot
 ![map](./map.png)
 
-This is a starter kit to help you build your own map for [WorkAdventure](https://workadventu.re).
-
-To understand how to use this starter kit, follow the tutorial at [https://workadventu.re/map-building](https://workadventu.re/map-building).
-
-## Structure
-* *public*: Static files like PDFs or audio files
-* *src*: Scripts files
-* *tilesets*: All tilesets
-* *map.tmj*: Map file
-* *map.png*: The map thumbnail displayed on the in-game map information
-
-If you want to use more than one map file, just add the new map file on root or in a folder.
-
-we recommend using 500x500 images for the map thumbnails.
-
-If you are going to create custom websites to embed in the map, please reference the HTML files in the `input` option in *vite.config.js*.
-
-## Requirements
-
-Node.js version >=16
+Ce repository contient le code associé à l'article "Programmez votre escape game!" publié dans le magazine Programmez!
 
 ## Installation
 
-With npm installed (comes with [node](https://nodejs.org/en/)), run the following commands into a terminal in the root directory of this project:
+Pour installer le projet, vous devez avoir Node.js version >=16 installé sur votre machine.
 
 ```shell
 npm install
 npm run dev
 ```
 
-## Test production map
+## Tester la map en production
 
-You can test the optimized map as it will be in production:
-```sh
-npm run build
-npm run prod
-```
+Pour déployer la carte, forkez ce repository et activez "Github Pages".
+
+Rendez-vous ensuite sur le site Github Pages de votre repository.
+
+Plus de détails ici: https://workadventu.re/map-building/
+
+## Structure
+
+* *public*: Fichiers statics (PDFs, fichiers audio...)
+* *src*: Scripts
+* *tilesets*: Les tilesets utilisés pour la carte
+* *map.tmj*: La carte elle-même, au fomat "Tiled Map JSON"
+* *map.png*: Une preview de la carte
 
 ## Licenses
 
-This project contains multiple licenses as follows:
+Ce projet contient plusieurs licenses:
 
-* [Code license](./LICENSE.code) *(all files except those for other licenses)*
-* [Map license](./LICENSE.map) *(`map.tmj` and the map visual as well)*
-* [Assets license](./LICENSE.assets) *(the files inside the `src/assets/` folder)*
+* [Code license](./LICENSE.code) *(tous les fichiers à l'exception des fichiers couverts par d'autres licences)*
+* [Map license](./LICENSE.map) *(`map.tmj` et `map.png`)*
+* [Assets license](./LICENSE.assets) *(les fichiers dans le répertoire `tilesets/`)*
 
-### About third party assets
-
-If you add third party assets in your map, do not forget to:
-1. Credit the author and license with the "tilesetCopyright" property present in the properties of each tilesets in the `map.tmj` file
-2. Add the license text in LICENSE.assets
