@@ -73,7 +73,7 @@ function updateMap() {
     const players = [...WA.players.list(), WA.player];
     for (const player of players) {
         const buttonPressed = player.state.buttonPressed;
-        if (buttonPressed in buttons) {
+        if (typeof buttonPressed === 'string' && buttonPressed in buttons) {
             buttons[buttonPressed].pressed = true;
             if (buttons[buttonPressed].color === 'red') {
                 nbRedPressed++;
