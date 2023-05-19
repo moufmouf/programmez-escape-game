@@ -73,7 +73,8 @@ function updateMap() {
     const players = [...WA.players.list(), WA.player];
     for (const player of players) {
         const buttonPressed = player.state.buttonPressed;
-        if (typeof buttonPressed === 'string' && buttonPressed in buttons) {
+        // Workaround for Typescript type narrowing bug with "buttonPressed in buttons"
+        if (typeof buttonPressed === 'string' && (buttonPressed === "button1" || buttonPressed === "button2" || buttonPressed === "button3" || buttonPressed === "button4" || buttonPressed === "button5" || buttonPressed === "button6" || buttonPressed === "button7" || buttonPressed === "button8")) {
             buttons[buttonPressed].pressed = true;
             if (buttons[buttonPressed].color === 'red') {
                 nbRedPressed++;
