@@ -28,8 +28,7 @@ WA.onInit().then(async () => {
         players: true,
     });
 
-    for (const btnName in buttons) {
-        const {x, y} = buttons[btnName];
+    for (const [btnName, {x, y}] of Object.entries(buttons)) {
         WA.room.area.create({
             name: btnName,
             x: x * 32,
@@ -64,8 +63,8 @@ WA.onInit().then(async () => {
 
 function updateMap() {
     // Reset pressed state
-    for (const btnName in buttons) {
-        buttons[btnName].pressed = false;
+    for (const button of Object.values(buttons)) {
+        button.pressed = false;
     }
 
     let nbRedPressed = 0;
@@ -74,7 +73,7 @@ function updateMap() {
     const players = [...WA.players.list(), WA.player];
     for (const player of players) {
         const buttonPressed = player.state.buttonPressed;
-        if (typeof buttonPressed === 'string') {
+        if (buttonPressed in buttons) {
             buttons[buttonPressed].pressed = true;
             if (buttons[buttonPressed].color === 'red') {
                 nbRedPressed++;
