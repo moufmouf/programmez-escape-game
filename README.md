@@ -1,6 +1,5 @@
 # Programmez votre escape game!
 
-// TODO: screenshot
 ![map](./map.png)
 
 Ce repository contient le code associé à l'article "Programmez votre escape game!" publié dans le magazine Programmez!
