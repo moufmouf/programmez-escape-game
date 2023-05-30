@@ -52,10 +52,19 @@ WA.onInit().then(async () => {
         });
     }
 
-    WA.players.onVariableChange('buttonPressed').subscribe(value => {
-        console.log("VARIABLE CHANGED", value);
+    WA.players.onPlayerEnters.subscribe((player) => {
+        player.state.onVariableChange('buttonPressed').subscribe(() => {
+            updateMap();
+        });
+    });
+    WA.players.onPlayerLeaves.subscribe(() => {
         updateMap();
     });
+
+    /*WA.players.onVariableChange('buttonPressed').subscribe(({player, value}) => {
+        console.log("VARIABLE CHANGED", value, player.state.buttonPressed);
+        updateMap();
+    });*/
 
     updateMap();
 
